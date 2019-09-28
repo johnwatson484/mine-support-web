@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "start:watch": "nodemon --inspect=0.0.0.0 --ext js,njk --legacy-watch index.js",
     "build:css": "bin/build-css",
     "build": "bin/build",
     "lint": "standard",
@@ -12,8 +13,8 @@
     "test": "npm run lint && npm run unit-test",
     "postinstall": "npm run build"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "John Watson",
+  "license": "MIT",
   "dependencies": {
     "@hapi/boom": "^7.4.7",
     "@hapi/hapi": "^18.4.0",
@@ -22,6 +23,7 @@
     "@hapi/vision": "^5.5.4",
     "blipp": "^4.0.1",
     "govuk-frontend": "^3.2.0",
+    "nodemon": "^1.19.2",
     "nunjucks": "^3.2.0"
   },
   "devDependencies": {
