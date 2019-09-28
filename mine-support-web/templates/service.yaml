@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "route"
+    nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
+  name: {{ .Values.name }}
+  labels:
+    app: {{ .Values.name }}
+spec:
+  ports:
+  - name: http
+    port: {{ .Values.service.port }}
+    targetPort: http
+  selector:
+    app: {{ .Values.name }}
+status:
+  loadBalancer: {}

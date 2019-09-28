@@ -1,0 +1,42 @@
+environment: development
+image: mine-support-web
+name: mine-support-web
+auth:
+imagePullSecret: 
+service:
+  port: 80
+
+container:  
+  imagePullPolicy: IfNotPresent
+  redeployOnChange: update this field to force a change
+  requestMemory: 30Mi
+  requestCpu: 10m
+  limitMemory: 60Mi
+  limitCpu: 50m
+  runAsNonRoot: true
+  runAsUser: 1000
+  readOnlyRootFilesystem: true
+  allowPrivilegeEscalation: false
+  restartPolicy: Always
+  restClientTimeoutMillis: 20000
+  
+ingress:
+  serviceName: mine-support-web
+  endPoint:
+  server:
+replicas: 1
+minReadySeconds: 5
+
+readinessProbe:
+  path: /healthy
+  port: 3000
+  initialDelaySeconds: 20
+  periodSeconds: 10
+  failureThreshold: 3
+
+livenessProbe:
+  path: /healthz
+  port: 3000
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  failureThreshold: 3
