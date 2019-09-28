@@ -1,0 +1,29 @@
+{% extends 'layout.njk' %}
+{% from "input/macro.njk" import govukInput %}
+{% from "button/macro.njk" import govukButton %}
+{% from "error-message/macro.njk" import govukErrorMessage %}
+{% from "fieldset/macro.njk" import govukFieldset %}
+
+{% block content %}
+  <div class="govuk-body">
+
+    {% call govukFieldset({
+      legend: {
+        text: "What is your email address?",
+        classes: "govuk-fieldset__legend--xl",
+        isPageHeading: true,
+        hint: {
+          text: 'We will contact you using this email.'
+        }
+      }
+    }) %}
+    <form method="POST" action="/claim/email">
+      {{ govukInput(model) }}      
+      {{ govukButton({
+        text: "Submit application"
+      }) }}
+    </form>
+
+    {% endcall %}
+  </div>
+{% endblock %}
