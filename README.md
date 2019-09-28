@@ -1,2 +1,2 @@
-# mine-support-web
+# Mine Support Web
 Mock digital service
