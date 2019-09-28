@@ -5,7 +5,7 @@ module.exports = [{
   method: 'GET',
   path: '/email',
   handler: (request, h) => {
-    return h.view('home', new ViewModel())
+    return h.view('email', new ViewModel())
   }
 }, {
   method: 'POST',
