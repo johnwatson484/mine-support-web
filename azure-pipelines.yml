@@ -38,7 +38,6 @@ steps:
   displayName: Push container to registry
 
 - task: AzureCLI@1
-  condition: and(succeeded(), contains(variables['Build.SourceBranch'], 'refs/tags'))
   inputs:
     azureSubscription: $(azureSubscriptionEndpoint)
     scriptLocation: inlineScript
