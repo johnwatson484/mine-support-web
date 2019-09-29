@@ -17,6 +17,8 @@ RUN npm install
 # Bundle app source
 COPY --chown=node:node . .
 
+RUN npm run build
+
 ARG PORT=3000
 ENV PORT ${PORT}
 EXPOSE ${PORT} 9229 9230
