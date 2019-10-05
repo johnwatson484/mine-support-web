@@ -4,7 +4,9 @@ services:
     build: .
     image: mine-support-web
     container_name: mine-support-web
-    command: npm run start:watch
+    command: npm run start:watch    
+    environment:
+      SEND_CLAIM_CONNECTION_STRING: ${SEND_CLAIM_CONNECTION_STRING}
     ports:
       - "3000:3000"
     volumes:

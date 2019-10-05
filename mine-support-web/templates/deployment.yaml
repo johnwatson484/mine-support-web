@@ -40,6 +40,8 @@ spec:
         env:
         - name: NODE_ENV
           value: {{ .Values.environment }}
+        - name: SEND_CLAIM_CONNECTION_STRING
+          value: {{ .Values.sendClaimConnectionString }}
         - name: PORT
           value: "3000"        
         ports:

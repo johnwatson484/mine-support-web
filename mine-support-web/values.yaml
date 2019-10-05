@@ -2,7 +2,8 @@ environment: development
 image: mine-support-web
 name: mine-support-web
 auth:
-imagePullSecret: 
+imagePullSecret:
+sendClaimConnectionString:
 service:
   port: 80
 
