@@ -13,8 +13,8 @@ const schema = joi.object().keys({
 const config = {
   port: process.env.PORT,
   env: process.env.NODE_ENV,
-  messageConnectionString: process.env.MINE_SUPPORT_CLAIM_MESSAGE_CONNECTION_STRING,
-  messageQueue: process.env.MINE_SUPPORT_CLAIM_MESSAGE_QUEUE
+  messageConnectionString: process.env.SEND_CLAIM_CONNECTION_STRING,
+  messageQueue: process.env.CLAIM_MESSAGE_QUEUE
 }
 
 // Validate config
