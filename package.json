@@ -23,7 +23,9 @@
     "blipp": "^4.0.1",
     "govuk-frontend": "^3.2.0",
     "nodemon": "^1.19.2",
-    "nunjucks": "^3.2.0"
+    "nunjucks": "^3.2.0",
+    "rhea": "^1.0.10",
+    "rhea-promise": "^1.0.0"
   },
   "devDependencies": {
     "@hapi/code": "^6.0.0",

@@ -1,5 +1,6 @@
 const joi = require('@hapi/joi')
 const ViewModel = require('../models/email')
+const sendMessage = require('../services/send-message')
 
 module.exports = [{
   method: 'GET',
@@ -10,7 +11,8 @@ module.exports = [{
 }, {
   method: 'POST',
   path: '/email',
-  handler: (request, h) => {
+  handler: async (request, h) => {
+    await sendMessage(request.payload.email)
     return h.redirect('./confirmation')
   },
   options: {
