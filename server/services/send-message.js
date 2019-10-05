@@ -8,7 +8,6 @@ module.exports = async function send (email) {
     connectionOptions = parseConnectionString(config.messageConnectionString)
   } catch (err) {
     console.error('unable to parse connection string', err)
-    return 'Unable to parse connection string'
   }
 
   const connection = new rheaPromise.Connection(connectionOptions)
