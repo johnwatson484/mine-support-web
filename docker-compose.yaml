@@ -6,9 +6,11 @@ services:
     container_name: mine-support-web
     command: npm run start:watch    
     environment:
-      MESSAGE_HOST: ${MESSAGE_HOST}
-      CLAIM_MESSAGE_USERNAME: ${CLAIM_MESSAGE_USERNAME}
-      CLAIM_MESSAGE_PASSWORD: ${CLAIM_MESSAGE_PASSWORD}      
+      MESSAGE_HOST: mine-support-message
+      MESSAGE_PORT: 5672
+      MESSAGE_TRANSPORT: tcp
+      CLAIM_MESSAGE_USERNAME: artemis
+      CLAIM_MESSAGE_PASSWORD: artemis      
     ports:
       - "3000:3000"
     volumes:
