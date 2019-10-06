@@ -40,8 +40,12 @@ spec:
         env:
         - name: NODE_ENV
           value: {{ .Values.environment }}
-        - name: SEND_CLAIM_CONNECTION_STRING
-          value: {{ .Values.sendClaimConnectionString }}
+        - name: MESSAGE_HOST
+          value: {{ .Values.container.messageHost }}
+        - name: CLAIM_MESSAGE_USERNAME
+          value: {{ .Values.container.claimMessageUsername }}
+        - name: CLAIM_MESSAGE_PASSWORD
+          value: {{ .Values.container.claimMessagePassword }}
         - name: PORT
           value: "3000"        
         ports:

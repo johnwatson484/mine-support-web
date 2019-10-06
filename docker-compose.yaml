@@ -6,7 +6,9 @@ services:
     container_name: mine-support-web
     command: npm run start:watch    
     environment:
-      SEND_CLAIM_CONNECTION_STRING: ${SEND_CLAIM_CONNECTION_STRING}
+      MESSAGE_HOST: ${MESSAGE_HOST}
+      CLAIM_MESSAGE_USERNAME: ${CLAIM_MESSAGE_USERNAME}
+      CLAIM_MESSAGE_PASSWORD: ${CLAIM_MESSAGE_PASSWORD}      
     ports:
       - "3000:3000"
     volumes:

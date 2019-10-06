@@ -5,16 +5,30 @@ const envs = ['development', 'test', 'production']
 const schema = joi.object().keys({
   port: joi.number().default(3000),
   env: joi.string().valid(...envs).default(envs[0]),
-  messageConnectionString: joi.string(),
-  messageQueue: joi.string().default('claim')
+  messageQueue: joi.object().keys({
+    transport: joi.string().default('ssl'),
+    host: joi.string(),
+    hostname: joi.string(),
+    username: joi.string(),
+    password: joi.string(),
+    port: joi.number().default(5671),
+    queue: joi.string().default('claim')
+  })
 })
 
 // Build config
 const config = {
   port: process.env.PORT,
   env: process.env.NODE_ENV,
-  messageConnectionString: process.env.SEND_CLAIM_CONNECTION_STRING,
-  messageQueue: process.env.CLAIM_MESSAGE_QUEUE
+  messageQueue: {
+    transport: process.env.MESSAGE_TRANSPORT,
+    host: process.env.MESSAGE_HOST,
+    hostname: process.env.MESSAGE_HOST,
+    username: process.env.CLAIM_MESSAGE_USERNAME,
+    password: process.env.CLAIM_MESSAGE_PASSWORD,
+    port: process.env.MESSAGE_PORT,
+    queue: process.env.CLAIM_MESSAGE_QUEUE
+  }
 }
 
 // Validate config
