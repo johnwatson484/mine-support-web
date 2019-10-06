@@ -47,7 +47,7 @@ steps:
       az acr helm repo add
       helm package ./mine-support-web --save
       packageFile=`ls mine-support-web-* |  xargs echo`
-      az acr helm push -n mine-support-web --force $packageFile
+      az acr helm push --force $packageFile
       az acr helm list
     failOnStandardError: false
   displayName: add Helm chart to registry
