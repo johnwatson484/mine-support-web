@@ -3,10 +3,14 @@ services:
   mine-support-web:
     depends_on: 
       - mine-support-message
+    networks: 
+      - mine-support 
 
   mine-support-message:
     container_name: mine-support-message
     image: vromero/activemq-artemis:2.9.0-alpine
+    networks:
+      - mine-support
     environment:
       ARTEMIS_USERNAME: artemis
       ARTEMIS_PASSWORD: artemis
@@ -26,3 +30,7 @@ volumes:
   message-queue-etc: {}
   message-queue-etc-override: {}
   message-queue-lock: {}
+
+networks:
+  mine-support:
+    external: true
