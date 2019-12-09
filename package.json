@@ -33,7 +33,7 @@
     "@hapi/good-console": "^8.1.2",
     "@hapi/good-squeeze": "^5.2.1",
     "@hapi/lab": "^21.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "standard": "^14.3.1"
   }
 }
