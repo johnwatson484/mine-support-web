@@ -22,7 +22,7 @@
     "@hapi/vision": "^5.5.4",
     "blipp": "^4.0.1",
     "govuk-frontend": "^3.4.0",
-    "nodemon": "^2.0.1",
+    "nodemon": "^2.0.2",
     "nunjucks": "^3.2.0",
     "rhea": "^1.0.15",
     "rhea-promise": "^1.0.0"
