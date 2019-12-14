@@ -17,6 +17,21 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'SonarQube'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'MineSupport'
+    cliProjectName: 'MineSupport'
+    cliSources: '.'
+
+- task: SonarQubeAnalyze@4
+
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '300'
+
 - task: DockerCompose@0
   inputs:
     action: Build services
