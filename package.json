@@ -28,7 +28,7 @@
     "rhea-promise": "^1.0.0"
   },
   "devDependencies": {
-    "@hapi/code": "^7.0.0",
+    "@hapi/code": "^8.0.1",
     "@hapi/good": "^8.2.4",
     "@hapi/good-console": "^8.1.2",
     "@hapi/good-squeeze": "^5.2.1",
