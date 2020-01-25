@@ -1,0 +1,7 @@
+version: '3'
+services:
+  mine-support-web:    
+    volumes:
+      - ./server/:/usr/src/app/server/
+      - ./index.js:/usr/src/app/index.js
+      - ./package.json:/usr/src/app/package.json
