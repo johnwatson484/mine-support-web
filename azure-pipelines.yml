@@ -54,6 +54,7 @@ steps:
     dockerComposeFile: docker-compose.yaml
     qualifyImageNames: true
   displayName: Push container to registry
+  enabled: false
 
 - task: AzureCLI@1
   inputs:
@@ -69,4 +70,5 @@ steps:
       az acr helm list
     failOnStandardError: false
   displayName: add Helm chart to registry
+  enabled: false
 
