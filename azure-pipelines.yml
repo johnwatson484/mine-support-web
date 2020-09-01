@@ -6,6 +6,8 @@
 trigger:
 - master
 
+pr: none
+
 variables:
   azureContainerRegistry: MineSupport
   azureContainerRegistryFull: MineSupport.azurecr.io
